@@ -1,14 +1,18 @@
 <html>
   <head>
     {% if title %}
-    <title>{{ title }} - Microblog</title>
+     <title>{{ title }} - Microblog</title> <!-- If the route is working, returns a title. Otherwise will maintain a default value -->
     {% else %}
-    <title>Welcome to Microblog</title>
+    <title>Welcome to Flask-Login APP</title>
     {% endif %}
   </head>
   <body>
-    <div>Microblog: <a href="/index">Home</a></div>
+    <div>APP: <a href="/index">Home</a></div> <!-- Inserts an anchor tag to handle the /index endpoint-->
     <hr />
     {% block content %}{% endblock %}
   </body>
 </html>
+
+<!-- That's the base.html file, which will be used to all web app HTML files, in this case, our Flask-Login.
+It uses the Jinja2 template engine to give a Pythonic way to interact with the HTML programing language.
+-->
