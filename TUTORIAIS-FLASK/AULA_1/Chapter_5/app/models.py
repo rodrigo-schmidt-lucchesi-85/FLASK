@@ -3,6 +3,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
 
+# In the model's table, we're creating three functions: __repr__() a way to 
+# represent the object on the database, which username is the field chosen; 
+# set_password() to generate an encrypted password to be inserted on the User 
+# table; check_password() to compare the hashed and string type password for 
+# validation purposes. Finally, using a decorator to add a query method to the 
+# LoginManager extension loading the user id to handle the state inside the 
+# application.
+
 
 
 class User(UserMixin,db.Model):

@@ -13,6 +13,12 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 
+
+# In this chapter, we're creating a registration form to insert some data 
+# inside the database. Inside the RegistrationForm() class, two methods 
+# are created: validate_username() to check if there are any username 
+# with the same register inside the database and also validate_email() 
+# to proceed with same action to the email field.
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
