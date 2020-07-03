@@ -9,11 +9,10 @@ def index():
     user = {'username': 'Linus Torvald'}
     return render_template('index.html', title='Home', user=user)
 
-# '/login' The login route a instance with the class LoginForm is created.
-# If the required fields as fullfilled and the necessary ones loaded as well, the validation
-# is completed, otherwise return to login page.  The flashing system basically makes it possible to record a 
-# message at the end of a request and access it next request and only next request. 
-# This is usually combined with a layout template that does this.
+# In the login route ('/login' ) form, an instance from the LoginForm class is created. 
+# If the required fields are fulfilled, the validation is completed and the home page is 
+# redirected. Otherwise, return to the login page.  The flashing system is a way to 
+# interact with the user to map which actions were taken.
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()

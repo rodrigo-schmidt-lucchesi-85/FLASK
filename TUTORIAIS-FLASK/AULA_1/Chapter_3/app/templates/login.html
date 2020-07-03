@@ -3,20 +3,20 @@
 <form action="" method="post" novalidate>
   {{ form.hidden_tag() }}
   <p>
-    {{ form.username.label }}<br />
-    {{ form.username(size=32) }}<br />
-    {% for error in form.username.errors %}
+    {{ form.username.label }}<br /> <!--Define the label on the the form box-->
+    {{ form.username(size=32) }}<br /> <!--Define the text size inside the form box-->
+    {% for error in form.username.errors %} <!-- If some error occurs during the process, it's displayed in red-->
     <span style="color: red;">[{{ error }}]</span>
     {% endfor %}
   </p>
   <p>
-    {{ form.password.label }}<br />
+    {{ form.password.label }}<br /> <!--The same procedure for the passowrd fiedl-->
     {{ form.password(size=32) }}<br />
     {% for error in form.password.errors %}
     <span style="color: red;">[{{ error }}]</span>
     {% endfor %}
   </p>
-  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p> <!--A tag to remember user, creating a session-->
   <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}

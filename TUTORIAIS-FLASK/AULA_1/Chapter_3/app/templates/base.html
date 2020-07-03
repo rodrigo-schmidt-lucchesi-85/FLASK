@@ -15,7 +15,7 @@
     <a href="{{ url_for('login') }}">Login</a>
   </div>
   <hr>
-  {% with messages = get_flashed_messages() %}
+  {% with messages = get_flashed_messages() %} <!--Displaying flash message -->
   {% if messages %}
   <ul>
     {% for message in messages %}
